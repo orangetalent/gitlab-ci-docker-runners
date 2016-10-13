@@ -30,7 +30,7 @@ RUN pecl install xdebug \
 RUN curl -sL https://getcomposer.org/composer.phar -o /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
 # Install phploy
-RUN curl -sL https://gitlab.orangetalent.nl/edwin/phploy/raw/2.x/phploy -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
+RUN curl -sL https://github.com/banago/PHPloy/raw/2.x/phploy -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
 
 # Install phpunit, last version that supports php 5.3
 RUN curl -sL https://phar.phpunit.de/phpunit-4.8.9.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit

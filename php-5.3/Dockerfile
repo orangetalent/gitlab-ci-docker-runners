@@ -22,7 +22,7 @@ RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 RUN docker-php-ext-install bcmath bz2 calendar dba exif ftp gd gettext gmp intl mcrypt mysqli pcntl pdo_mysql pspell shmop soap sockets sysvmsg sysvsem sysvshm wddx xmlrpc xsl zip
 
 # Install xdebug php extension
-RUN pecl install xdebug \
+RUN pecl install xdebug-2.2.7 \
     && echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini \
 ;
 

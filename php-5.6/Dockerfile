@@ -38,9 +38,4 @@ RUN curl -sL https://github.com/banago/PHPloy/raw/master/bin/phploy.phar -o /usr
 # Install phpunit
 RUN curl -sL https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit
 
-# Add host key and copy private key into container
-RUN mkdir /root/.ssh \
-    && ssh-keyscan -t rsa gitlab.orangetalent.nl >> /root/.ssh/known_hosts
-COPY id_rsa /root/.ssh/id_rsa
-
 CMD [ "bash" ]

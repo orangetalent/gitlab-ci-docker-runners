@@ -1,4 +1,4 @@
-FROM helder/php-5.3
+FROM php:7.0
 MAINTAINER Edwin Hoksberg <edwin@orangetalent.nl>
 
 RUN export DEBIAN_FRONTEND=noninteractive
@@ -19,10 +19,13 @@ RUN apt-get update \
 
 # Install php extensions using built-in tools
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
-RUN docker-php-ext-install bcmath bz2 calendar dba exif ftp gd gettext gmp intl mcrypt mysqli pcntl pdo_mysql pspell shmop soap sockets sysvmsg sysvsem sysvshm wddx xmlrpc xsl zip
+RUN docker-php-source extract \
+    && docker-php-ext-install -j$(nproc) bcmath bz2 calendar dba exif ftp gd gettext gmp intl mcrypt hash mysqli pcntl pdo_mysql pspell shmop soap sockets pdo_sqlite sysvmsg sysvsem sysvshm wddx xmlrpc xsl zip \
+    && docker-php-source delete \
+;
 
 # Install xdebug php extension
-RUN pecl install xdebug-2.2.7 \
+RUN pecl install xdebug \
     && echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini \
 ;
 
@@ -30,14 +33,9 @@ RUN pecl install xdebug-2.2.7 \
 RUN curl -sL https://getcomposer.org/composer.phar -o /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
 # Install phploy
-RUN curl -sL https://github.com/banago/PHPloy/raw/2.x/phploy -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
+RUN curl -sL https://github.com/banago/PHPloy/raw/master/bin/phploy.phar -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
 
-# Install phpunit, last version that supports php 5.3
-RUN curl -sL https://phar.phpunit.de/phpunit-4.8.9.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit
-
-# Add host key and copy private key into container
-RUN mkdir /root/.ssh \
-    && ssh-keyscan -t rsa gitlab.orangetalent.nl >> /root/.ssh/known_hosts
-COPY id_rsa /root/.ssh/id_rsa
+# Install phpunit
+RUN curl -sL https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit
 
 CMD [ "bash" ]

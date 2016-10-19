@@ -13,7 +13,7 @@ RUN apt-get update \
     && apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3 \
     && echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get install -y git-core openssh-client curl libapparmor1 nodejs git-ftp libbz2-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev libgmp-dev libgmp3-dev libc-client2007e-dev zlib1g-dev libicu-dev g++ libpspell-dev libxml2-dev libsqlite3-dev libxslt-dev \
+    && apt-get install -y git-core openssh-client curl libapparmor1 nodejs git-ftp libbz2-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev libgmp-dev libgmp3-dev libc-client2007e-dev zlib1g-dev libicu-dev g++ libpspell-dev libxml2-dev libsqlite3-dev libxslt-dev yarn \
     && rm -rf /var/lib/apt/lists/* \
 ;
 

@@ -10,7 +10,7 @@ RUN apt-get update \
     && echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280 \
     && echo "deb https://deb.nodesource.com/node_6.x trusty main" >> /etc/apt/sources.list \
-    && apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3 \
+    && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 86E50310 \
     && echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
     && apt-get install -y git-core openssh-client curl libapparmor1 nodejs git-ftp libbz2-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev libgmp-dev libgmp3-dev libc-client2007e-dev zlib1g-dev libicu-dev g++ libpspell-dev libxml2-dev libsqlite3-dev libxslt-dev yarn \

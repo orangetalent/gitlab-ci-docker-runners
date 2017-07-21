@@ -1,2 +1,3 @@
 # Dockerfiles
-This repository contains dockerfiles we use for our gitlab ci runners.
+
+This repository contains Dockerfiles OrangeTalent uses for the GitLab CI Runners.

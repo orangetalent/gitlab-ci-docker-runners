@@ -1,5 +1,5 @@
 FROM php:5.6
-MAINTAINER Edwin Hoksberg <edwin@orangetalent.nl>
+MAINTAINER Maarten Bode <maarten@orangetalent.nl>
 
 RUN export DEBIAN_FRONTEND=noninteractive
 

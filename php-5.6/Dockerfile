@@ -38,4 +38,10 @@ RUN curl -sL https://github.com/banago/PHPloy/raw/master/dist/phploy.phar -o /us
 # Install phpunit
 RUN curl -sL https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit
 
+ENV COMPOSER_CACHE_DIR /cache/composer
+ENV YARN_CACHE_FOLDER /cache/yarn
+ENV NPM_CONFIG_CACHE /cache/npm
+ENV GEM_SPEC_CACHE /cache/gem
+ENV PIP_DOWNLOAD_CACHE /cache/pip
+
 CMD [ "bash" ]

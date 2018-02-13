@@ -9,7 +9,7 @@ RUN apt-get install -y apt-transport-https ca-certificates wget gnupg
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E1DD270288B4E6030699E45FA1715D88E1DF1F24
 RUN echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
-RUN echo "deb https://deb.nodesource.com/node_6.x trusty main" >> /etc/apt/sources.list
+RUN echo "deb https://deb.nodesource.com/node_8.x trusty main" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 86E50310
 RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update

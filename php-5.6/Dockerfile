@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E1DD270288B4E6030699E45FA1715D88E1DF1F24 \
     && echo "deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main" >> /etc/apt/sources.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280 \
-    && echo "deb https://deb.nodesource.com/node_6.x trusty main" >> /etc/apt/sources.list \
+    && echo "deb https://deb.nodesource.com/node_8.x trusty main" >> /etc/apt/sources.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 86E50310 \
     && echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \

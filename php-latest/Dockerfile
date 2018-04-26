@@ -34,8 +34,14 @@ RUN curl -sL https://getcomposer.org/composer.phar -o /usr/local/bin/composer &&
 # Install phploy
 RUN curl -sL https://github.com/banago/PHPloy/raw/master/dist/phploy.phar -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
 
-# Install phpunit
+# Install Deployer
+RUN curl -LO https://deployer.org/deployer.phar && mv deployer.phar /usr/local/bin/dep && chmod +x /usr/local/bin/dep
+
+# Install PHPUnit
 RUN curl -sL https://phar.phpunit.de/phpunit.phar -o /usr/local/bin/phpunit && chmod +x /usr/local/bin/phpunit
+
+# Add Deployer recipes
+RUN composer require deployer/recipes --dev
 
 ENV COMPOSER_CACHE_DIR /cache/composer
 ENV YARN_CACHE_FOLDER /cache/yarn

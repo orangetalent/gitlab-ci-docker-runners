@@ -32,7 +32,7 @@ RUN docker-php-source extract \
 RUN curl -sL https://getcomposer.org/composer.phar -o /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
 # Install phploy
-RUN curl -sL https://github.com/banago/PHPloy/raw/master/dist/phploy.phar -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
+RUN curl -sL https://github.com/banago/PHPloy/raw/d22d532c118049abda5a86607ed8f99095d349be/dist/phploy.phar -o /usr/local/bin/phploy && chmod +x /usr/local/bin/phploy
 
 # Install Deployer
 RUN curl -LO https://deployer.org/deployer.phar && mv deployer.phar /usr/local/bin/dep && chmod +x /usr/local/bin/dep

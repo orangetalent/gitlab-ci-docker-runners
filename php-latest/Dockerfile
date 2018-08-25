@@ -13,7 +13,7 @@ RUN echo "deb https://deb.nodesource.com/node_8.x trusty main" >> /etc/apt/sourc
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 86E50310
 RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update
-RUN apt-get install -y git-core openssh-client curl libapparmor1 nodejs git-ftp libbz2-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng-dev libgmp-dev libgmp3-dev libc-client2007e-dev zlib1g-dev libicu-dev g++ libpspell-dev libxml2-dev libsqlite3-dev libxslt-dev yarn locales locales-all
+RUN apt-get install -y git-core openssh-client curl libapparmor1 nodejs git-ftp rsync libbz2-dev libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng-dev libgmp-dev libgmp3-dev libc-client2007e-dev zlib1g-dev libicu-dev g++ libpspell-dev libxml2-dev libsqlite3-dev libxslt-dev yarn locales locales-all
 RUN rm -rf /var/lib/apt/lists/*
 
 # Install php extensions using built-in tools
